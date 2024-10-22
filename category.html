@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="splash-screen">
+      <h1 id="splash-title">Quiz App</h1>
+    </div>
+    <div class="container">
+      <div class="choose-test">
+        <label for="test-category">Choose The Test:</label>
+        <select name="test" id="test-category" class="test-category">
+          <option value="html">HTML</option>
+          <option value="css">CSS</option>
+          <option value="js">JavaScript</option>
+        </select>
+      </div>
+      <button class="start-btn" id="start-btn">Start Test</button>
+    </div>
+
+    <script src="category.js"></script>
+  </body>
+</html>

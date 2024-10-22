@@ -1,0 +1,82 @@
+[
+  {
+    "title": "What does CSS stand for?",
+    "answer_1": "Creative Style Sheets",
+    "answer_2": "Cascading Style Sheets",
+    "answer_3": "Computer Style Sheets",
+    "answer_4": "Colorful Style Sheets",
+    "right_answer": "Cascading Style Sheets"
+  },
+  {
+    "title": "Which HTML attribute is used to define inline CSS?",
+    "answer_1": "style",
+    "answer_2": "class",
+    "answer_3": "font",
+    "answer_4": "css",
+    "right_answer": "style"
+  },
+  {
+    "title": "Which property is used to change the background color?",
+    "answer_1": "bgcolor",
+    "answer_2": "background-color",
+    "answer_3": "color",
+    "answer_4": "background",
+    "right_answer": "background-color"
+  },
+  {
+    "title": "How do you add a background color for all <h1> elements?",
+    "answer_1": "h1 {background-color: #FFFFFF;}",
+    "answer_2": "h1.all {background-color: #FFFFFF;}",
+    "answer_3": "h1 {bgcolor: #FFFFFF;}",
+    "answer_4": "h1.background {color: #FFFFFF;}",
+    "right_answer": "h1 {background-color: #FFFFFF;}"
+  },
+  {
+    "title": "Which property is used to change the text color of an element?",
+    "answer_1": "fgcolor",
+    "answer_2": "text-color",
+    "answer_3": "color",
+    "answer_4": "font-color",
+    "right_answer": "color"
+  },
+  {
+    "title": "Which CSS property controls the text size?",
+    "answer_1": "font-size",
+    "answer_2": "text-style",
+    "answer_3": "text-size",
+    "answer_4": "font-style",
+    "right_answer": "font-size"
+  },
+  {
+    "title": "How do you make each word in a text start with a capital letter?",
+    "answer_1": "text-transform: uppercase;",
+    "answer_2": "text-transform: capitalize;",
+    "answer_3": "transform: capitalize;",
+    "answer_4": "text-style: capitalize;",
+    "right_answer": "text-transform: capitalize;"
+  },
+  {
+    "title": "Which property is used to change the font of an element?",
+    "answer_1": "font-family",
+    "answer_2": "font-style",
+    "answer_3": "font-weight",
+    "answer_4": "font-size",
+    "right_answer": "font-family"
+  },
+  {
+    "title": "How do you display a border like this: The top border = 10px, bottom border = 5px, left border = 20px, and right border = 1px?",
+    "answer_1": "border-width: 10px 5px 20px 1px;",
+    "answer_2": "border-width: 10px 1px 5px 20px;",
+    "answer_3": "border-width: 10px 20px 5px 1px;",
+    "answer_4": "border-width: 10px 5px 1px 20px;",
+    "right_answer": "border-width: 10px 1px 5px 20px;"
+  },
+  {
+    "title": "How do you make a list that lists its items with squares?",
+    "answer_1": "list-style-type: square;",
+    "answer_2": "list: square;",
+    "answer_3": "list-type: square;",
+    "answer_4": "list-style: box;",
+    "right_answer": "list-style-type: square;"
+  }
+]

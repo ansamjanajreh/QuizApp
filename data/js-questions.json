@@ -1,0 +1,82 @@
+[
+  {
+    "title": "Which of the following is used to declare a variable in JavaScript?",
+    "answer_1": "var",
+    "answer_2": "if",
+    "answer_3": "loop",
+    "answer_4": "switch",
+    "right_answer": "var"
+  },
+  {
+    "title": "How do you display a message in the browser console?",
+    "answer_1": "print()",
+    "answer_2": "console.log()",
+    "answer_3": "display()",
+    "answer_4": "alert()",
+    "right_answer": "console.log()"
+  },
+  {
+    "title": "Which of the following is a correct way to create a function?",
+    "answer_1": "function myFunction()",
+    "answer_2": "myFunction() function",
+    "answer_3": "create function myFunction",
+    "answer_4": "function = myFunction()",
+    "right_answer": "function myFunction()"
+  },
+  {
+    "title": "Which of these is a string in JavaScript?",
+    "answer_1": "'Hello'",
+    "answer_2": "42",
+    "answer_3": "true",
+    "answer_4": "[1, 2, 3]",
+    "right_answer": "'Hello'"
+  },
+  {
+    "title": "What does 'null' represent in JavaScript?",
+    "answer_1": "A number",
+    "answer_2": "Nothing or no value",
+    "answer_3": "A function",
+    "answer_4": "An array",
+    "right_answer": "Nothing or no value"
+  },
+  {
+    "title": "What does 'if' do in JavaScript?",
+    "answer_1": "Loops through data",
+    "answer_2": "Declares a variable",
+    "answer_3": "Checks a condition",
+    "answer_4": "Ends the program",
+    "right_answer": "Checks a condition"
+  },
+  {
+    "title": "Which of the following is used to show an alert box in JavaScript?",
+    "answer_1": "show()",
+    "answer_2": "alert()",
+    "answer_3": "display()",
+    "answer_4": "console.log()",
+    "right_answer": "alert()"
+  },
+  {
+    "title": "How do you start a comment in JavaScript?",
+    "answer_1": "#",
+    "answer_2": "//",
+    "answer_3": "<!-- -->",
+    "answer_4": "/* */",
+    "right_answer": "//"
+  },
+  {
+    "title": "What is the result of '2 + 2' in JavaScript?",
+    "answer_1": "22",
+    "answer_2": "4",
+    "answer_3": "undefined",
+    "answer_4": "NaN",
+    "right_answer": "4"
+  },
+  {
+    "title": "Which keyword is used to define a constant in JavaScript?",
+    "answer_1": "var",
+    "answer_2": "let",
+    "answer_3": "const",
+    "answer_4": "define",
+    "right_answer": "const"
+  }
+]
