@@ -1,6 +1,49 @@
+
+let countSpan = document.querySelector(".count span");
+let bulletsSpanContainer = document.querySelector(".bullets .spans");
+let quizArea = document.querySelector(".quiz-area");
+let answersArea = document.querySelector(".answers-area");
+let submitButton = document.querySelector(".submit-button");
+let bullets = document.querySelector(".bullets");
+let resultsConatiner = document.querySelector(".results");
+let countdownElement = document.querySelector(".countdown");
+let currentIndex = 0;
+let rightAnswers = 0;
+let countdownInterval;
+function getQuestions(jsonFile) {
+  let myRequest = new XMLHttpRequest();
+  myRequest.onreadystatechange = function () {
+    if (this.readyState === 4 && this.status === 200) {
+      let questionsObject = JSON.parse(this.responseText);
+      let qCount = questionsObject.length;
+      createBullets(qCount);
+      addQuestionData(questionsObject[currentIndex], qCount);
+      countdown(5, qCount);
+      submitButton.onclick = () => {
+        let theRightAnswer = questionsObject[currentIndex].right_answer;
+        currentIndex++;
+        checkAnswer(theRightAnswer, qCount);
+        quizArea.innerHTML = "";
+        answersArea.innerHTML = "";
+        addQuestionData(questionsObject[currentIndex], qCount);
+        handleBullets();
+        clearInterval(countdownInterval);
+        countdown(5, qCount);
+
+        showResults(qCount);
+      };
+    }
+
+  };
+
+  myRequest.open("GET", jsonFile, true);
+  myRequest.send();
+
+
+
+}
 window.addEventListener("load", function () {
   const selectedCategory = localStorage.getItem("selectedCategory");
-
   if (document.getElementById("category-name")) {
     if (selectedCategory) {
       document.getElementById("category-name").textContent =
@@ -20,48 +63,21 @@ window.addEventListener("load", function () {
         default:
           jsonFile = "./data/html_questions.json";
       }
-
       getQuestions(jsonFile);
+
     }
   }
 });
-let countSpan = document.querySelector(".count span");
-let quizArea = document.querySelector(".quiz-area");
-let answersArea = document.querySelector(".answers-area");
-let submitButton = document.querySelector(".submit-button");
-
-let currentIndex = 0;
-function getQuestions(jsonFile) {
-  let myRequest = new XMLHttpRequest();
-
-  myRequest.onreadystatechange = function () {
-    if (this.readyState === 4 && this.status === 200) {
-      let questionsObject = JSON.parse(this.responseText);
-      let qCount = questionsObject.length;
-
-      createBullets(qCount);
-
-      addQuestionData(questionsObject[currentIndex], qCount);
-
-      submitButton.onclick = () => {
-        currentIndex++;
-
-        quizArea.innerHTML = "";
-        answersArea.innerHTML = "";
-
-        addQuestionData(questionsObject[currentIndex], qCount);
-      };
-    }
-  };
-
-  myRequest.open("GET", jsonFile, true);
-  myRequest.send();
-}
-
-getQuestions(jsonFile);
 
 function createBullets(num) {
   countSpan.innerHTML = num;
+  for (let i = 0; i < num; i++) {
+    let theBullet = document.createElement("span");
+    if (i == 0) {
+      theBullet.className = "on";
+    }
+    bulletsSpanContainer.appendChild(theBullet);
+  }
 }
 
 function addQuestionData(obj, count) {
@@ -94,5 +110,67 @@ function addQuestionData(obj, count) {
       mainDiv.appendChild(theLabel);
       answersArea.appendChild(mainDiv);
     }
+  }
+}
+function checkAnswer(answer, count) {
+  let answers = document.getElementsByName("question");
+  let theChoosenAnswer;
+  for (let i = 0; i < answers.length; i++) {
+    if (answers[i].checked) {
+      theChoosenAnswer = answers[i].dataset.answer;
+
+    }
+  }
+  if (answer === theChoosenAnswer) {
+    rightAnswers++;
+  }
+}
+function handleBullets() {
+  let bulletsSpans = document.querySelectorAll(".bullets .spans span");
+  let arrayOfSpans = Array.from(bulletsSpans);
+  arrayOfSpans.forEach((span, index) => {
+    if (currentIndex === index) {
+      span.className = "on";
+    }
+  });
+}
+function showResults(count) {
+  let results;
+  if (currentIndex === count) {
+    quizArea.remove();
+    answersArea.remove();
+    submitButton.remove();
+    bullets.remove();
+    if (rightAnswers > (count / 2) && rightAnswers < count) {
+      results = `<span class="good">Good</span>,${rightAnswers} from ${count} `;
+
+    } else if (rightAnswers === count) {
+      results = `<span class="perfect">Perfect</span>,All answers is good`;
+
+    } else {
+      results = `<span class="bad">Bad</span>,${rightAnswers} from ${count} `;
+
+    }
+    resultsConatiner.innerHTML = results;
+    resultsConatiner.style.padding = '10px';
+    resultsConatiner.style.backgroundColor = 'White';
+    resultsConatiner.style.marginTop = '10px';
+  }
+}
+function countdown(duration, count) {
+  if (currentIndex < count) {
+    let minutes, seconds;
+    countdownInterval = setInterval(function () {
+      minutes = parseInt(duration / 60);
+      seconds = parseInt(duration % 60);
+      minutes = minutes < 10 ? `0${minutes}` : minutes;
+      seconds = seconds < 10 ? `0${seconds}` : seconds;
+      countdownElement.innerHTML = `${minutes}:${seconds}`;
+      if (--duration < 0) {
+        clearInterval(countdownInterval);
+        submitButton.click();
+      }
+
+    }, 1000);
   }
 }
