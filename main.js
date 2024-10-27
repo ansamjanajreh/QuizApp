@@ -18,7 +18,7 @@ function getQuestions(jsonFile) {
       let qCount = questionsObject.length;
       createBullets(qCount);
       addQuestionData(questionsObject[currentIndex], qCount);
-      countdown(5, qCount);
+      countdown(15, qCount);
       submitButton.onclick = () => {
         let theRightAnswer = questionsObject[currentIndex].right_answer;
         currentIndex++;
@@ -28,7 +28,7 @@ function getQuestions(jsonFile) {
         addQuestionData(questionsObject[currentIndex], qCount);
         handleBullets();
         clearInterval(countdownInterval);
-        countdown(5, qCount);
+        countdown(15, qCount);
 
         showResults(qCount);
       };
@@ -142,19 +142,16 @@ function showResults(count) {
     submitButton.remove();
     bullets.remove();
     if (rightAnswers > (count / 2) && rightAnswers < count) {
-      results = `<span class="good">Good</span>,${rightAnswers} from ${count} `;
+      results = `<span class="good">Good &#128522;<br><br></span> your score ${rightAnswers} out of ${count} `;
 
     } else if (rightAnswers === count) {
-      results = `<span class="perfect">Perfect</span>,All answers is good`;
+      results = `<span class="perfect">Perfect &#128512;<br><br></span> your score ${rightAnswers} out of ${count}`;
 
     } else {
-      results = `<span class="bad">Bad</span>,${rightAnswers} from ${count} `;
+      results = `<span class="bad">Bad &#128530;<br><br></span> your score ${rightAnswers} out of ${count} `;
 
     }
     resultsConatiner.innerHTML = results;
-    resultsConatiner.style.padding = '10px';
-    resultsConatiner.style.backgroundColor = 'White';
-    resultsConatiner.style.marginTop = '10px';
   }
 }
 function countdown(duration, count) {
