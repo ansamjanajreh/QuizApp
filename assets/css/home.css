@@ -1,0 +1,139 @@
+* {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #fff;
+  background: #0b4f5e;
+}
+
+.main {
+  min-height: 100vh;
+  background: url("../imgs/img.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  pointer-events: auto;
+  transition: 0.3s ease;
+}
+.main.active {
+  filter: blur(15px);
+  pointer-events: none;
+}
+
+.home {
+  width: 100%;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-content {
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home-content h1 {
+  font-size: 78px;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
+}
+
+.home-content p {
+  font-size: 16px;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
+}
+
+.home-content .select-btn {
+  width: 190px;
+  height: 55px;
+  background: #1c997c;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #1c997c;
+  font-size: 18px;
+  color: #fff;
+  font-weight: 400;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.home-content .select-btn:hover {
+  background: #0b4f5e;
+  box-shadow: none;
+}
+.instructions {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width: 500px;
+  background: #fff;
+  border-radius: 6px;
+  padding: 10px 25px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+.instructions.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+.instructions h2 {
+  font-size: 50px;
+  color: #1c997c;
+}
+.instructions .inst {
+  display: inline-block;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+  margin: 4px 0;
+}
+.instructions .buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #999;
+  margin-top: 10px;
+  padding: 15px 0 7px;
+}
+.instructions .buttons .info-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 45px;
+  background: #1c997c;
+  border: 2px solid #1c997c;
+  outline: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.instructions .buttons .info-btn:nth-child(1) {
+  background: transparent;
+  color: #1c997c;
+}
+.instructions .buttons .info-btn:nth-child(1):hover {
+  background: #1c997c;
+  color: #fff;
+}
+.instructions .buttons .info-btn:nth-child(2):hover {
+  background: #1c997c;
+  border-color: #1c997c;
+}
