@@ -8,7 +8,7 @@ To run this project, follow these steps:
 
 2- Open the Project Folder in VSCode.
 
-3- Run the Home Page(home.html) with Live Server.
+3- Run the Home Page(index.html) with Live Server.
 
 ### You Can Visit the Website Live at This Link:
 [QuizNest](https://ansamjanajreh.github.io/QuizApp/)
