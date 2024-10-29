@@ -12,3 +12,13 @@ To run this project, follow these steps:
 
 ### You Can Visit the Website Live at This Link:
 [QuizNest](https://ansamjanajreh.github.io/QuizApp/)
+
+## Contributing
+Amani Hushieh - [@amanihushieh](https://github.com/amanihushieh)
+
+Ansam Janajreh - [@ansamjanajreh](https://github.com/ansamjanajreh)
+
+Mohammed Abu Aloyoun - [@Mohammed-Abu-Aloyoun](https://github.com/Mohammed-Abu-Aloyoun)
+
+
+
